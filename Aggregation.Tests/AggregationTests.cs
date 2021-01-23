@@ -143,11 +143,20 @@ namespace Aggregation.Tests
         [TestCase("LongDeposit", "Period", typeof(int))]
         public void Class_HasPublicReadonlyFieldWithType(string className, string fieldName, Type returnType)
         {
+            Console.WriteLine("test case was started here");
+
             var classType = Type.GetType($"{AssemblyName}.{className}, {AssemblyName}");
             AssertFailIfNull(classType, $"Class {className}");
 
+            Console.WriteLine(classType);
+
             var propertyInfo = classType.GetProperty(fieldName, BindingFlags.Public | BindingFlags.Instance);
+
+            Console.WriteLine(propertyInfo);
+
             AssertFailIfNull(propertyInfo, $"Field '{fieldName}'");
+
+            
 
             if (!propertyInfo.CanRead && propertyInfo.CanWrite && propertyInfo.PropertyType != returnType)
             {
