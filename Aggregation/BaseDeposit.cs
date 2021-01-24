@@ -2,8 +2,8 @@ namespace Aggregation
 {
     public class BaseDeposit : Deposit
     {
-        public new readonly decimal Amount { get; }
-        public new readonly int Period { get; }
+        public new decimal Amount { get; }
+        public new int Period { get; }
         public BaseDeposit(decimal amount, int period) : base(amount, period)
         {
             Amount = amount;
