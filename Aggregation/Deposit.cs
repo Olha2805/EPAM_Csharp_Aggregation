@@ -2,8 +2,8 @@ namespace Aggregation
 {
     public abstract class Deposit
     {
-        public readonly decimal Amount { get; }
-        public readonly int Period { get; }
+        public decimal Amount { get; }
+        public int Period { get; }
 
         public Deposit(decimal Amount, int Period) 
         {
